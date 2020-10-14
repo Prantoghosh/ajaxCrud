@@ -75,4 +75,36 @@ $(document).ready(function () {
         });
     }
 
+    $(document).on("click",".viewBtn",function(e){
+
+        e.preventDefault();
+
+        var id= $(this).data("id");
+        var url= $(this).attr("href");
+
+        console.log("success");
+
+        $.ajax({
+
+            url:url+"/"+id,
+            type:"get",
+            dataType:"JSON",
+
+            success:function(response){
+                console.log(response);
+                $("#viewEmployeeModal").modal("show");
+
+                $(".employeeDetailsHeader").text(response.name+"'s Details");
+                $(".eImage").attr("src" , "http://127.0.0.1:8000/storage/"+response.image);
+                $(".eName").text("Name: "+ response.name);
+                $(".eEmail").text("Email: "+ response.email);
+                $(".ePhone").text("Phone: "+ response.phone);
+            }, 
+
+
+        });
+
+
+    });
+
 });

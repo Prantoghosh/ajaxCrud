@@ -23,3 +23,5 @@ Route::get('get/employees', 'EmployeesController@getEmployee')->name('getEmploye
 
 Route::post('/employees/add', 'EmployeesController@store')->name('addEmployee');
 
+Route::get('view/employee/data/{id}', 'EmployeesController@view')->name('viewEmployee');
+

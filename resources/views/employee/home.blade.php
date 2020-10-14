@@ -63,9 +63,12 @@
                        </td>
 
                         <td>
-                            <a href="" class="btn btn-primary btn-sm">View</a>
-                            <a href="" class="btn btn-info btn-sm">Edit</a>
-                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{{ url('view/employee/data') }}" data-id="{{ $employee->id }}"
+                            class="btn btn-primary btn-sm viewBtn">View</a>
+                        <a href="{{ url('edit/employee/data') }}" data-id="{{ $employee->id }}"
+                            class="btn btn-info btn-sm editBtn">Edit</a>
+                        <a href="{{ url('delete/employee/data') }}"
+                            data-id="{{ $employee->id }}" class="btn btn-danger btn-sm deleteBtn">Delete</a>
 
                         </td>
                     </tr>
@@ -103,12 +106,12 @@
     <div id="getAllData" data-url="{{url('get/employees')}}" ></div>      
 
 
-  <!-- Modal -->
+  <!-- Add Employee Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -148,6 +151,39 @@
       </div>
     </div>
   </div>
+    <!--Add Employee Modal Ends -->
+
+    <!--View Modal Starts -->
+    <div class="modal fade" id="viewEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="viewEmployeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title employeeDetailsHeader" id="viewEmployeeModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="profileInfo ml-3">
+                    <div class="">
+                        <img class="eImage rounded-circle" height="75" width="80" src="" alt="Profile pic">
+                    </div>
+                    <div class="eName"></div>
+                    <div class="eEmail"></div>
+                    <div class="ePhone"></div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+    
+          </div>
+        </div>
+      </div>
+
+        <!--View Modal Ends -->
 
     </div>
 
