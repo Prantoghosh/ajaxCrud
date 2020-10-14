@@ -26,9 +26,13 @@
            </td>
 
             <td>
-                <a href="" class="btn btn-primary btn-sm">View</a>
-                <a href="" class="btn btn-info btn-sm">Edit</a>
-                <a href="" class="btn btn-danger btn-sm">Delete</a>
+
+                <a href="{{ url('view/employee/data') }}" data-id="{{ $employee->id }}"
+                    class="btn btn-primary btn-sm viewBtn">View</a>
+                <a href="{{ url('edit/employee/data') }}" data-id="{{ $employee->id }}"
+                    class="btn btn-info btn-sm editBtn">Edit</a>
+                <a href="{{ url('delete/employee/data') }}"
+                    data-id="{{ $employee->id }}" class="btn btn-danger btn-sm deleteBtn">Delete</a>
 
             </td>
         </tr>

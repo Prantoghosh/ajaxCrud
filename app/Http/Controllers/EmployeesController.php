@@ -52,4 +52,11 @@ class EmployeesController extends Controller
         $employees= Employee::latest()->get();
         return view('employee.getRealtimeEmployees',compact('employees'));
     }
+
+    public function view(Request $request, $id)
+    {
+        $employees = Employee::find($id);
+
+        return $employees;
+    }
 }
