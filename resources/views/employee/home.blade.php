@@ -39,7 +39,7 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Name<i class="fa fa-sort" aria-hidden="true"></i></th>
+                        <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Image</th>
@@ -81,7 +81,7 @@
                 <tfoot>
                     <tr>
                         <th>Id</th>
-                        <th>Name<i class="fa fa-sort" aria-hidden="true"></i></th>
+                        <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Image</th>
@@ -117,26 +117,35 @@
           </button>
         </div>
         <div class="modal-body">
+            <div id="validation-errors"></div>
+
           
         <form action="{{route('addEmployee')}}" method="POST" id="addEmployee">
             @csrf
+
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Name <span style="color: red">(required)</span></label>
                     <input type="text" class="form-control" id="name" name="name"  placeholder="Enter name">
+                    <div id="error_name"></div>
                 </div>
                 <div class="form-group">
-                  <label for="email">Email address</label>
+                  <label for="email">Email address <span style="color: red">(required)</span></label>
                   <input type="email" class="form-control" id="email" name="email"  placeholder="Enter email">
+                  <div id="error_email"></div>
                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
+                    <label for="phone">Phone <span style="color: red">(required)</span></label>
                     <input type="number" class="form-control" id="phone" name="phone"  placeholder="Enter phone no.">
+                    <div id="error_phone"></div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="image">Image</label>
                     <input type="file" class="form-control" id="image" name="image"  placeholder="image">
+                    <div id="error_image"></div>
+
                 </div>
 
 
@@ -191,7 +200,7 @@
     <script src="{{asset('js/jQuery.js')}}"></script>
     <script src="{{asset('js/bootstrap.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.js.map')}}"></script>
+    
     
     <script src="{{asset('js/datatables.min.js')}}"></script>
 
